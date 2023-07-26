@@ -1,8 +1,7 @@
-# Exercise 5: Improving the User Experience
+# Project: Hangman
 
 # import module
 import random
-
 # import hangman_words.py as word
 import hangman_words as word
 # import hangman_art.py as art
@@ -100,4 +99,3 @@ while lives != 0:
 
     else:
         print(art.stages[lives])
-
