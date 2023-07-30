@@ -22,6 +22,26 @@ largest_bid = 0
 name_largest = ""
 
 
+# define function to find the largest bid, by input as a dictionary
+
+def find_largest_bidder(bidding_record):
+
+    # define variable max_bid and winner
+    max_bid = 0
+    winner = ""
+
+    # do loop for every "keys" in dictionary, to give output "values"
+    for bidder in bidding_record:
+
+        # if dict_bid[idx] > max_bid
+        if bidding_record[bidder] > max_bid:
+            max_bid = bidding_record[bidder]
+            winner = bidder
+
+    # print out the bidder
+    print(f"The winner is {winner} with a bid of ${max_bid}.")
+
+
 while bidding:
 
     # prompt the name of user
@@ -40,20 +60,6 @@ while bidding:
         bidding = True
     else:
         bidding = False
-        print(add_bidder)
 
-        # check the largest bidder
-        for names in add_bidder:
-
-            # if the new bidder has a larger bid
-            if add_bidder[names] > largest_bid:
-                largest_bid = add_bidder[names]
-                name_largest = names
-
-            # if the new bidder has a lower bid than the current largest bidder
-            else:
-                largest_bid = largest_bid
-                name_largest = name_largest
-
-        # print out the name of the biggest bid and the value
-        print(f"The winner is {name_largest} with a bid of ${largest_bid}.")
+        # run the function find_largest_bidder
+        find_largest_bidder(add_bidder)
